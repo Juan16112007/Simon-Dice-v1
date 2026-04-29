@@ -47,13 +47,12 @@ function generarSecuencia(maxColor) {
     let seq = [];
 
     for (let i = 0; i < MAX_COLORES_SEQ; i++) {
-        let num = Math.floor(Math.random() * (maxColor + 1));
+        let num = (Math.random() * (maxColor + 1)) | 0;
         seq.push(intToColor(num));
     }
 
     return seq;
 }
-
 // Comprueba si el color introducido coincide con el de la secuencia en la posición dada
 function comprobarColor(seq, pos, color) {
     return seq[pos] === color;
